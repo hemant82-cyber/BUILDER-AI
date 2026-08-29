@@ -30,7 +30,7 @@ export async function createProject(req, res) {
       { role: "assistant", content: "Planning project structure..." },
     ],
     version: 0,
-    owner: req.user.user.Id,
+    owner: req.user.userId,
     status: "pending",
     filesPlanned: [],
     filesGenerated: [],
@@ -279,7 +279,7 @@ export async function updateProjectFiles(req, res) {
     _id: project._id,
     name: project.name,
     description: project.description,
-    files: fileObj,
+    files: filesObj,
     messages: project.messages,
     version: project.version,
     createdAt: project.createdAt,
@@ -332,7 +332,7 @@ export async function getPublicProject(req, res) {
     _id: project._id,
     name: project.name,
     description: project.description,
-    files: fileObj,
+    files: filesObj,
     version: project.version,
   });
 }
