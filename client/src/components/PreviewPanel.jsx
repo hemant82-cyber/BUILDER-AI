@@ -147,7 +147,7 @@ const PreviewPanel = ({ project, activeFile, showCode }) => {
         >
           {showCode && (
             <SandpackCodeEditor
-              showTabs
+              showTabs={false}
               showLineNumbers
               showInlineErrors
               wrapContent
